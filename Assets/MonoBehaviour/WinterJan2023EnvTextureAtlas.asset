@@ -1,0 +1,713 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 499468296, guid: 00566d7905479bd394c62e1ed3491326, type: 3}
+  m_Name: WinterJan2023EnvTextureAtlas
+  m_EditorClassIdentifier:
+  version: 3252
+  resultType: 0
+  materialsAndUVRects:
+  - material: {fileID: 2100000, guid: 50be4bd5405fea94589c674a1dfa1fbe, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.0009765625
+      y: 0.0009765625
+      width: 0.125
+      height: 0.125
+    srcObjName: GTFlag_EnvPrefab
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2100000, guid: 446a3f6de527c4d4cb93071fae66aa26, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.12792969
+      y: 0.38183594
+      width: 0.125
+      height: 0.125
+    srcObjName: IcicleChunkMedA_Prefab
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2100000, guid: 635e7673afc625b449d2a17bc2a2e9f3, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.12792969
+      y: 0.2548828
+      width: 0.125
+      height: 0.125
+    srcObjName: IcicleChunkSmlA_Prefab
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2100000, guid: 1a9ce6f6e3ee8e94a96bedbb13b7d69e, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.7626953
+      y: 0.12792969
+      width: 0.125
+      height: 0.125
+    srcObjName: IcicleSingleLrgA_Prefab (1)
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2100000, guid: 9cf3a0bc066bda342886b2e985df2942, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.6357422
+      y: 0.12792969
+      width: 0.125
+      height: 0.125
+    srcObjName: IcicleSingleSmlA_Prefab
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2100000, guid: 45ccd1c2515ffac4187a1445c04d83bc, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.50878906
+      y: 0.12792969
+      width: 0.125
+      height: 0.125
+    srcObjName: IcicleSingleMedA_Prefab
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2100000, guid: 04ac50ece3eef224b8d9d87e3c7d9d78, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.38183594
+      y: 0.12792969
+      width: 0.125
+      height: 0.125
+    srcObjName: SmileyFlag_EnvPrefab
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2100000, guid: 396bc69e7e986c74d97dfc2c4751eee4, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.2548828
+      y: 0.12792969
+      width: 0.125
+      height: 0.125
+    srcObjName: SnowSphereSmlA_Prefab (1)
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2100000, guid: 61324f8d3cf55084789fbd462d3f19f2, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.12792969
+      y: 0.12792969
+      width: 0.125
+      height: 0.125
+    srcObjName: SnowSphereMedA_Prefab (1)
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2100000, guid: 166132b87dc108c4888cb259e4371548, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.0009765625
+      y: 0.7626953
+      width: 0.125
+      height: 0.125
+    srcObjName: SnowBlockLrgA_Prefab
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2100000, guid: d4422d97ba8ff88468c12c6c3914207c, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.12792969
+      y: 0.50878906
+      width: 0.125
+      height: 0.125
+    srcObjName: SnowBlockSmlA_Prefab (2)
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2100000, guid: 3e9b1c1099f13c14db5e8434f59fd334, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.0009765625
+      y: 0.6357422
+      width: 0.125
+      height: 0.125
+    srcObjName: SnowBlockMedA_Prefab (1)
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2100000, guid: 9ea2cb5407bab3045a03a25f4f0329b1, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.0009765625
+      y: 0.38183594
+      width: 0.125
+      height: 0.125
+    srcObjName: SnowPyramidSmlA_Prefab
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2100000, guid: 40e2bfa22c1ab7f4a882c37f41d9ca3a, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.0009765625
+      y: 0.2548828
+      width: 0.125
+      height: 0.125
+    srcObjName: SqueezyPenguin_EnvPrefab
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2100000, guid: ce7ec101fb34f2546a3c47895166e1b4, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.0009765625
+      y: 0.12792969
+      width: 0.125
+      height: 0.125
+    srcObjName: IceBlockLrgA_Prefab
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2100000, guid: 0ab81e3188189e548b38ec85fe7f2944, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.7626953
+      y: 0.0009765625
+      width: 0.125
+      height: 0.125
+    srcObjName: IceBlockMedA_Prefab
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2100000, guid: 7556be1a66faebf44a5bac3253a028a0, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.6357422
+      y: 0.0009765625
+      width: 0.125
+      height: 0.125
+    srcObjName: IceBlockSmlA_Prefab
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2100000, guid: a0a67169b0a278d478c1373363060afd, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.50878906
+      y: 0.0009765625
+      width: 0.125
+      height: 0.125
+    srcObjName: IcePyramidSmlA_Prefab
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2100000, guid: c3c7c5498b9ad8442a65858acbe3f88d, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.38183594
+      y: 0.0009765625
+      width: 0.125
+      height: 0.125
+    srcObjName: IceSphereMedA_Prefab
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2100000, guid: e20d6925252ab0148b469b839c138544, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.2548828
+      y: 0.0009765625
+      width: 0.125
+      height: 0.125
+    srcObjName: IceSphereSmlA_Prefab
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2100000, guid: 3c4855ddba23cf94288ca2f9c37cea03, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.12792969
+      y: 0.0009765625
+      width: 0.125
+      height: 0.125
+    srcObjName: SnowBlockLrgA
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2100000, guid: 711079705ad8f3849b8d5dda2b954b67, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.0009765625
+      y: 0.50878906
+      width: 0.125
+      height: 0.125
+    srcObjName: SnowBlockMedA
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  - material: {fileID: 2100000, guid: ed07252aa1cce5446a063b7ffb615220, type: 2}
+    atlasRect:
+      serializedVersion: 2
+      x: 0.12792969
+      y: 0.6357422
+      width: 0.125
+      height: 0.125
+    srcObjName: SnowBlockSmlA
+    textureArraySliceIdx: -1
+    allPropsUseSameTiling: 1
+    allPropsUseSameTiling_sourceMaterialTiling:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    allPropsUseSameTiling_samplingEncapsulatinRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1
+      height: 1
+    propsUseDifferntTiling_srcUVsamplingRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    tilingTreatment: 0
+  resultMaterials:
+  - combinedMaterial: {fileID: 2100000, guid: 7ed640e159051894d974faf4f7323f5f, type: 2}
+    considerMeshUVs: 0
+    sourceMaterials:
+    - {fileID: 2100000, guid: 50be4bd5405fea94589c674a1dfa1fbe, type: 2}
+    - {fileID: 2100000, guid: 446a3f6de527c4d4cb93071fae66aa26, type: 2}
+    - {fileID: 2100000, guid: 635e7673afc625b449d2a17bc2a2e9f3, type: 2}
+    - {fileID: 2100000, guid: 1a9ce6f6e3ee8e94a96bedbb13b7d69e, type: 2}
+    - {fileID: 2100000, guid: 9cf3a0bc066bda342886b2e985df2942, type: 2}
+    - {fileID: 2100000, guid: 45ccd1c2515ffac4187a1445c04d83bc, type: 2}
+    - {fileID: 2100000, guid: 04ac50ece3eef224b8d9d87e3c7d9d78, type: 2}
+    - {fileID: 2100000, guid: 396bc69e7e986c74d97dfc2c4751eee4, type: 2}
+    - {fileID: 2100000, guid: 61324f8d3cf55084789fbd462d3f19f2, type: 2}
+    - {fileID: 2100000, guid: 166132b87dc108c4888cb259e4371548, type: 2}
+    - {fileID: 2100000, guid: d4422d97ba8ff88468c12c6c3914207c, type: 2}
+    - {fileID: 2100000, guid: 3e9b1c1099f13c14db5e8434f59fd334, type: 2}
+    - {fileID: 2100000, guid: 9ea2cb5407bab3045a03a25f4f0329b1, type: 2}
+    - {fileID: 2100000, guid: 40e2bfa22c1ab7f4a882c37f41d9ca3a, type: 2}
+    - {fileID: 2100000, guid: ce7ec101fb34f2546a3c47895166e1b4, type: 2}
+    - {fileID: 2100000, guid: 0ab81e3188189e548b38ec85fe7f2944, type: 2}
+    - {fileID: 2100000, guid: 7556be1a66faebf44a5bac3253a028a0, type: 2}
+    - {fileID: 2100000, guid: a0a67169b0a278d478c1373363060afd, type: 2}
+    - {fileID: 2100000, guid: c3c7c5498b9ad8442a65858acbe3f88d, type: 2}
+    - {fileID: 2100000, guid: e20d6925252ab0148b469b839c138544, type: 2}
+    - {fileID: 2100000, guid: 3c4855ddba23cf94288ca2f9c37cea03, type: 2}
+    - {fileID: 2100000, guid: 711079705ad8f3849b8d5dda2b954b67, type: 2}
+    - {fileID: 2100000, guid: ed07252aa1cce5446a063b7ffb615220, type: 2}
+  resultMaterialsTexArray: []
+  doMultiMaterial: 0

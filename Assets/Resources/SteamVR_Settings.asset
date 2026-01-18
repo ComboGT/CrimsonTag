@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -328173898, guid: fc51d04c47e0bba82b64703d6d669dd2, type: 3}
+  m_Name: SteamVR_Settings
+  m_EditorClassIdentifier:
+  pauseGameWhenDashboardVisible: 1
+  lockPhysicsUpdateRateToRenderFrequency: 1
+  trackingSpaceOrigin: 1
+  actionsFilePath: actions.json
+  steamVRInputPath: SteamVR_Input
+  inputUpdateMode: 2
+  poseUpdateMode: 8
+  activateFirstActionSetOnStart: 1
+  editorAppKey: application.generated.unity.gorillatag.exe
+  autoEnableVR: 1
+  legacyMixedRealityCamera: 1
+  mixedRealityCameraPose:
+    actionPath: /actions//in/ExternalCamera
+    needsReinit: 1
+  mixedRealityCameraInputSource: 11
+  mixedRealityActionSetAutoEnable: 1
+  previewHandLeft: {fileID: 1155533982717499, guid: b1e45590e46eefd4eac1217fe259990a, type: 2}
+  previewHandRight: {fileID: 1430617170679490, guid: c097e1299b2506745a4d8564fa00a5be, type: 2}
