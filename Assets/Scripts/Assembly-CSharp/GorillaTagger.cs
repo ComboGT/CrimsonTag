@@ -88,8 +88,6 @@ public class GorillaTagger : MonoBehaviour
 
 	public bool disableTutorial;
 
-	public bool frameRateUpdated;
-
 	public GameObject leftHandTriggerCollider;
 
 	public GameObject rightHandTriggerCollider;
@@ -176,6 +174,11 @@ public class GorillaTagger : MonoBehaviour
 	private int cosmeticParticleLayerMask;
 	private Camera mainCameraComponent;
 
+	// Fixed physics constants (anti-cheat: prevents refresh rate manipulation exploits)
+	private const float FixedPhysicsRate = 90f;
+	private const float FixedDeltaTime = 1f / FixedPhysicsRate;
+	private const int FixedVelocityHistorySize = 7;  // 90Hz / 12 = 7.5, floored to 7
+
 	public static GorillaTagger Instance => _instance;
 
 	public float sphereCastRadius => 0.03f;
@@ -247,6 +250,30 @@ public class GorillaTagger : MonoBehaviour
 		{
 			gameOverlayActivatedCb = Callback<GameOverlayActivated_t>.Create(OnGameOverlayActivated);
 		}
+
+		// Initialize fixed physics (anti-cheat: all players use same physics regardless of display refresh rate)
+		InitializeFixedPhysics();
+	}
+
+	/// <summary>
+	/// Sets fixed physics values for all players to prevent refresh rate manipulation exploits.
+	/// All clients run at the same physics rate regardless of their display's refresh rate.
+	/// </summary>
+	private void InitializeFixedPhysics()
+	{
+		Time.fixedDeltaTime = FixedDeltaTime;
+
+		var player = GorillaLocomotion.Player.Instance;
+		player.velocityHistorySize = FixedVelocityHistorySize;
+
+		// Calculate fixed slide control based on 90Hz physics
+		// Formula: 1 - pow(pow(1 - baseSlideControl, 120), 1/targetFPS)
+		float fixedSlideControl = 1f - CalcSlideControl(FixedPhysicsRate);
+		player.slideControl = fixedSlideControl;
+
+		player.InitializeValues();
+
+		Debug.Log($"[Anti-Cheat] Fixed physics initialized: {FixedPhysicsRate}Hz, velocityHistorySize={FixedVelocityHistorySize}, slideControl={fixedSlideControl:F6}");
 	}
 
 	private void OnGameOverlayActivated(GameOverlayActivated_t pCallback)
