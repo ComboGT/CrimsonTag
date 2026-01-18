@@ -8,6 +8,10 @@ public class GorillaFlag : GorillaTrigger
 	public override void OnTriggered()
 	{
 		base.OnTriggered();
-		PhotonView.Get(Object.FindObjectOfType<GorillaCTFManager>()).RPC("TagFlag", RpcTarget.MasterClient, isRedFlag);
+		var ctfManager = GorillaGameManager.instance as GorillaCTFManager;
+		if (ctfManager != null)
+		{
+			PhotonView.Get(ctfManager).RPC("TagFlag", RpcTarget.MasterClient, isRedFlag);
+		}
 	}
 }

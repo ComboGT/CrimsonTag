@@ -449,6 +449,9 @@ namespace GorillaNetworking
 
 		public static volatile CosmeticsController instance;
 
+		// Pre-compiled regex for cleaning cloud region string (performance optimization)
+		private static readonly Regex CloudRegionCleanupRegex = new Regex("[^a-zA-Z0-9]", RegexOptions.Compiled);
+
 		public List<CosmeticItem> allCosmetics;
 
 		public Dictionary<string, CosmeticItem> allCosmeticsDict = new Dictionary<string, CosmeticItem>();
@@ -1227,7 +1230,7 @@ namespace GorillaNetworking
 				PlayFabClientAPI.GetSharedGroupData(new GetSharedGroupDataRequest
 				{
 					Keys = playerIDList,
-					SharedGroupId = PhotonNetwork.CurrentRoom.Name + Regex.Replace(PhotonNetwork.CloudRegion, "[^a-zA-Z0-9]", "").ToUpper()
+					SharedGroupId = PhotonNetwork.CurrentRoom.Name + CloudRegionCleanupRegex.Replace(PhotonNetwork.CloudRegion, "").ToUpper()
 				}, delegate(GetSharedGroupDataResult result)
 				{
 					attempts++;

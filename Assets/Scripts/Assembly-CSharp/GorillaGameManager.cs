@@ -39,6 +39,23 @@ public abstract class GorillaGameManager : MonoBehaviourPunCallbacks, IInRoomCal
 
 	public static volatile GorillaGameManager instance;
 
+	// Pre-compiled regex for cleaning cloud region string (performance optimization)
+	private static readonly Regex CloudRegionCleanupRegex = new Regex("[^a-zA-Z0-9]", RegexOptions.Compiled);
+
+	// Cached clean region string to avoid repeated regex/string operations
+	private string _cachedCleanRegion;
+	private string CachedCleanRegion
+	{
+		get
+		{
+			if (_cachedCleanRegion == null && PhotonNetwork.CloudRegion != null)
+			{
+				_cachedCleanRegion = CloudRegionCleanupRegex.Replace(PhotonNetwork.CloudRegion, "").ToUpper();
+			}
+			return _cachedCleanRegion ?? "";
+		}
+	}
+
 	public Room currentRoom;
 
 	public object obj;
@@ -139,7 +156,7 @@ public abstract class GorillaGameManager : MonoBehaviourPunCallbacks, IInRoomCal
 		}
 		if (list.Count > 0)
 		{
-			Debug.Log("group id to look up: " + PhotonNetwork.CurrentRoom.Name + Regex.Replace(PhotonNetwork.CloudRegion, "[^a-zA-Z0-9]", "").ToUpper());
+			Debug.Log("group id to look up: " + PhotonNetwork.CurrentRoom.Name + CachedCleanRegion);
 			foreach (string item in list)
 			{
 				playerCosmeticsLookup[item] = VRRigData.allcosmetics;
@@ -147,7 +164,7 @@ public abstract class GorillaGameManager : MonoBehaviourPunCallbacks, IInRoomCal
 			PlayFabClientAPI.GetSharedGroupData(new GetSharedGroupDataRequest
 			{
 				Keys = list,
-				SharedGroupId = PhotonNetwork.CurrentRoom.Name + Regex.Replace(PhotonNetwork.CloudRegion, "[^a-zA-Z0-9]", "").ToUpper()
+				SharedGroupId = PhotonNetwork.CurrentRoom.Name + CachedCleanRegion
 			}, delegate (GetSharedGroupDataResult result)
 			{
 				foreach (KeyValuePair<string, SharedGroupDataRecord> datum in result.Data)
@@ -368,7 +385,7 @@ public abstract class GorillaGameManager : MonoBehaviourPunCallbacks, IInRoomCal
 		PlayFabClientAPI.GetSharedGroupData(new GetSharedGroupDataRequest
 		{
 			Keys = list,
-			SharedGroupId = PhotonNetwork.CurrentRoom.Name + Regex.Replace(PhotonNetwork.CloudRegion, "[^a-zA-Z0-9]", "").ToUpper()
+			SharedGroupId = PhotonNetwork.CurrentRoom.Name + CachedCleanRegion
 		}, delegate (GetSharedGroupDataResult result)
 		{
 			foreach (KeyValuePair<string, SharedGroupDataRecord> datum in result.Data)

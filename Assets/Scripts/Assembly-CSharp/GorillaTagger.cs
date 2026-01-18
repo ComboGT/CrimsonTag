@@ -207,6 +207,13 @@ public class GorillaTagger : MonoBehaviour
 
 	protected void OnDestroy()
 	{
+		// Clean up Steamworks callback to prevent memory leak
+		if (gameOverlayActivatedCb != null)
+		{
+			gameOverlayActivatedCb.Dispose();
+			gameOverlayActivatedCb = null;
+		}
+
 		if (_instance == this)
 		{
 			_instance = null;
@@ -496,45 +503,51 @@ public class GorillaTagger : MonoBehaviour
 		lastHeadPositionForTag = headCollider.transform.position;
 		if (GorillaComputer.instance.voiceChatOn == "TRUE")
 		{
-			myRecorder = PhotonNetworkController.Instance.GetComponent<Recorder>();
-			if (GorillaComputer.instance.pttType != "ALL CHAT")
+			if (myRecorder == null)
 			{
-				primaryButtonPressRight = false;
-				secondaryButtonPressRight = false;
-				primaryButtonPressLeft = false;
-				secondaryButtonPressLeft = false;
-				primaryButtonPressRight = ControllerInputPoller.PrimaryButtonPress(XRNode.RightHand);
-				secondaryButtonPressRight = ControllerInputPoller.SecondaryButtonPress(XRNode.RightHand);
-				primaryButtonPressLeft = ControllerInputPoller.PrimaryButtonPress(XRNode.LeftHand);
-				secondaryButtonPressLeft = ControllerInputPoller.PrimaryButtonPress(XRNode.LeftHand);
-				if (primaryButtonPressRight || secondaryButtonPressRight || primaryButtonPressLeft || secondaryButtonPressLeft)
+				myRecorder = PhotonNetworkController.Instance.GetComponent<Recorder>();
+			}
+			if (myRecorder != null)
+			{
+				if (GorillaComputer.instance.pttType != "ALL CHAT")
 				{
-					if (GorillaComputer.instance.pttType == "PUSH TO MUTE")
+					primaryButtonPressRight = false;
+					secondaryButtonPressRight = false;
+					primaryButtonPressLeft = false;
+					secondaryButtonPressLeft = false;
+					primaryButtonPressRight = ControllerInputPoller.PrimaryButtonPress(XRNode.RightHand);
+					secondaryButtonPressRight = ControllerInputPoller.SecondaryButtonPress(XRNode.RightHand);
+					primaryButtonPressLeft = ControllerInputPoller.PrimaryButtonPress(XRNode.LeftHand);
+					secondaryButtonPressLeft = ControllerInputPoller.PrimaryButtonPress(XRNode.LeftHand);
+					if (primaryButtonPressRight || secondaryButtonPressRight || primaryButtonPressLeft || secondaryButtonPressLeft)
 					{
-						myRecorder.TransmitEnabled = false;
+						if (GorillaComputer.instance.pttType == "PUSH TO MUTE")
+						{
+							myRecorder.TransmitEnabled = false;
+						}
+						else if (GorillaComputer.instance.pttType == "PUSH TO TALK")
+						{
+							myRecorder.TransmitEnabled = true;
+						}
 					}
-					else if (GorillaComputer.instance.pttType == "PUSH TO TALK")
+					else if (GorillaComputer.instance.pttType == "PUSH TO MUTE")
 					{
 						myRecorder.TransmitEnabled = true;
 					}
+					else if (GorillaComputer.instance.pttType == "PUSH TO TALK")
+					{
+						myRecorder.TransmitEnabled = false;
+					}
 				}
-				else if (GorillaComputer.instance.pttType == "PUSH TO MUTE")
+				else if (!myRecorder.TransmitEnabled)
 				{
 					myRecorder.TransmitEnabled = true;
 				}
-				else if (GorillaComputer.instance.pttType == "PUSH TO TALK")
-				{
-					myRecorder.TransmitEnabled = false;
-				}
-			}
-			else if (!myRecorder.TransmitEnabled)
-			{
-				myRecorder.TransmitEnabled = true;
 			}
 		}
-		else if (PhotonNetworkController.Instance.GetComponent<Recorder>().TransmitEnabled)
+		else if (myRecorder != null && myRecorder.TransmitEnabled)
 		{
-			PhotonNetworkController.Instance.GetComponent<Recorder>().TransmitEnabled = false;
+			myRecorder.TransmitEnabled = false;
 		}
 	}
 
