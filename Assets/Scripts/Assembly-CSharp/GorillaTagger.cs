@@ -172,6 +172,10 @@ public class GorillaTagger : MonoBehaviour
 	private bool isOculusLoader;
 	private bool isOpenVRLoader;
 
+	// Cached layer mask and camera for ShowCosmeticParticles
+	private int cosmeticParticleLayerMask;
+	private Camera mainCameraComponent;
+
 	public static GorillaTagger Instance => _instance;
 
 	public float sphereCastRadius => 0.03f;
@@ -203,6 +207,10 @@ public class GorillaTagger : MonoBehaviour
 		wasInOverlay = false;
 		baseSlideControl = GorillaLocomotion.Player.Instance.slideControl;
 		gorillaTagColliderLayerMask = LayerMask.GetMask("Gorilla Tag Collider");
+
+		// Cache layer mask and camera component for ShowCosmeticParticles
+		cosmeticParticleLayerMask = 1 << LayerMask.NameToLayer("GorillaCosmeticParticle");
+		mainCameraComponent = mainCamera.GetComponent<Camera>();
 	}
 
 	protected void OnDestroy()
@@ -551,17 +559,32 @@ public class GorillaTagger : MonoBehaviour
 
 	protected void OnTriggerEnter(Collider other)
 	{
-		if (PhotonNetwork.InRoom && other.gameObject.layer == 15 && other.gameObject != null && other.gameObject.GetComponent<GorillaTriggerBox>() != null)
+		if (other == null || other.gameObject == null) return;
+
+		// Check for direct GorillaTriggerBox component (layer 15)
+		if (PhotonNetwork.InRoom && other.gameObject.layer == 15)
 		{
-			other.gameObject.GetComponent<GorillaTriggerBox>().OnBoxTriggered();
+			var directTriggerBox = other.gameObject.GetComponent<GorillaTriggerBox>();
+			if (directTriggerBox != null)
+			{
+				directTriggerBox.OnBoxTriggered();
+			}
 		}
-		if ((bool)other.GetComponentInChildren<GorillaTriggerBox>())
+
+		// Check for child GorillaTriggerBox
+		var childTriggerBox = other.GetComponentInChildren<GorillaTriggerBox>();
+		if (childTriggerBox != null)
 		{
-			other.GetComponentInChildren<GorillaTriggerBox>().OnBoxTriggered();
+			childTriggerBox.OnBoxTriggered();
 		}
-		else if ((bool)other.GetComponentInParent<GorillaTrigger>())
+		else
 		{
-			other.GetComponentInParent<GorillaTrigger>().OnTriggered();
+			// Check for parent GorillaTrigger
+			var parentTrigger = other.GetComponentInParent<GorillaTrigger>();
+			if (parentTrigger != null)
+			{
+				parentTrigger.OnTriggered();
+			}
 		}
 	}
 
@@ -569,13 +592,13 @@ public class GorillaTagger : MonoBehaviour
 	{
 		if (showParticles)
 		{
-			mainCamera.GetComponent<Camera>().cullingMask |= 1 << LayerMask.NameToLayer("GorillaCosmeticParticle");
-			mirrorCamera.cullingMask |= 1 << LayerMask.NameToLayer("GorillaCosmeticParticle");
+			mainCameraComponent.cullingMask |= cosmeticParticleLayerMask;
+			mirrorCamera.cullingMask |= cosmeticParticleLayerMask;
 		}
 		else
 		{
-			mainCamera.GetComponent<Camera>().cullingMask &= ~(1 << LayerMask.NameToLayer("GorillaCosmeticParticle"));
-			mirrorCamera.cullingMask &= ~(1 << LayerMask.NameToLayer("GorillaCosmeticParticle"));
+			mainCameraComponent.cullingMask &= ~cosmeticParticleLayerMask;
+			mirrorCamera.cullingMask &= ~cosmeticParticleLayerMask;
 		}
 	}
 

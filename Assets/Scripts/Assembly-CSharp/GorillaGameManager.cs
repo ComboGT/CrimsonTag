@@ -391,13 +391,18 @@ public abstract class GorillaGameManager : MonoBehaviourPunCallbacks, IInRoomCal
 			foreach (KeyValuePair<string, SharedGroupDataRecord> datum in result.Data)
 			{
 				Debug.Log("for player " + playerToUpdate.UserId);
-				Debug.Log("current allowed: " + playerCosmeticsLookup[datum.Key]);
+				string currentAllowed = playerCosmeticsLookup.TryGetValue(datum.Key, out var existing) ? existing : "";
+				Debug.Log("current allowed: " + currentAllowed);
 				Debug.Log("new allowed: " + datum.Value.Value);
-				if (playerCosmeticsLookup[datum.Key] != datum.Value.Value)
+				if (currentAllowed != datum.Value.Value)
 				{
 					playerCosmeticsLookup[datum.Key] = datum.Value.Value;
-					FindVRRigForPlayer(playerToUpdate).GetComponent<VRRig>().UpdateAllowedCosmetics();
-					FindVRRigForPlayer(playerToUpdate).GetComponent<VRRig>().SetCosmeticsActive();
+					var vrRig = FindVRRigForPlayer(playerToUpdate)?.GetComponent<VRRig>();
+					if (vrRig != null)
+					{
+						vrRig.UpdateAllowedCosmetics();
+						vrRig.SetCosmeticsActive();
+					}
 					Debug.Log("success on attempt " + attempts);
 				}
 				else if (attempts - 1 >= 0)
