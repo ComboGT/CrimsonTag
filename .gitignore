@@ -53,3 +53,7 @@ AssetImportOverrides/
 # Bakery lightmapper binaries (too large for GitHub, reinstall from Asset Store)
 Assets/Editor/x64/Bakery/
 Assets/Editor/x86/Bakery/
+
+.utmp/
+.idea/
+
