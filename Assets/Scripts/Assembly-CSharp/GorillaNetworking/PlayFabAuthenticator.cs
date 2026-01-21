@@ -61,9 +61,9 @@ namespace GorillaNetworking
 
         public void Awake()
         {
-            PhotonNetwork.PhotonServerSettings.AppSettings.AppIdRealtime = "d38f2bc2-606f-48a3-a928-1049862c822b";
-            PhotonNetwork.PhotonServerSettings.AppSettings.AppIdVoice = "f9307271-5ff4-4e5e-bce1-1ca4096a65b3";
-            PlayFabSettings.TitleId = "124CC8";
+            PhotonNetwork.PhotonServerSettings.AppSettings.AppIdRealtime = "5427105a-d1c8-49e6-9e77-503475505732";
+            PhotonNetwork.PhotonServerSettings.AppSettings.AppIdVoice = "857bd355-4d3e-4b67-8e7f-cfc492c8cba6";
+            PlayFabSettings.TitleId = "13FFD4";
             if (instance == null)
             {
                 instance = this;
