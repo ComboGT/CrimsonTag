@@ -9,6 +9,7 @@ Obj/
 Build/
 Builds/
 UserSettings/
+Assets/_Recovery/
 
 # Unity generated files
 *.csproj
