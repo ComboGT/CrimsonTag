@@ -219,7 +219,7 @@ public class GorillaPlayerScoreboardLine : MonoBehaviourPunCallbacks, IInRoomCal
                 {
                     this.playerMMR.gameObject.SetActive(true);
                 }
-                if ((this.playerVRRig != null && this.playerVRRig.GetComponent<PhotonVoiceView>().IsSpeaking) || (this.playerVRRig.photonView.IsMine && PhotonNetworkController.instance.GetComponent<Recorder>().IsCurrentlyTransmitting))
+                if ((this.playerVRRig != null && this.playerVRRig.GetComponent<PhotonVoiceView>().IsSpeaking) || (this.playerVRRig.photonView.IsMine && PhotonNetworkController.Instance.GetComponent<Recorder>().IsCurrentlyTransmitting))
                 {
                     this.speakerIcon.SetActive(true);
                     return;
