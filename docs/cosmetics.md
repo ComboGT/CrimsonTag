@@ -93,7 +93,7 @@ The game has 10 "slots" where you can wear things:
 | 5 | Back left holdable |
 | 6 | Back right holdable |
 | 7 | Left hand glove |
-| 8 | Right hand glove |
+| <br/>8 | Right hand glove |
 | 9 | Chest holdable |
 
 When you equip something, the game:
