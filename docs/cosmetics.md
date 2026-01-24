@@ -217,6 +217,84 @@ Assets/Scripts/Assembly-CSharp/
 
 ---
 
+## Item Naming Convention
+
+All cosmetic items follow a specific naming pattern: **`L` + `Category Letter` + `Sequence` + `.`**
+
+### The Pattern Explained
+
+| Prefix | Category | Example Items |
+|--------|----------|---------------|
+| **LH** | Hat | LHAAA., LHAAB., LHAAC. |
+| **LB** | Badge | LBAAA., LBAAB., LBAAC. |
+| **LF** | Face | LFAAA., LFAAB., LFAAC. |
+| **LM** | Holdable/Misc | LMAAA., LMAAB., LMAAC. |
+| **LS** | Slingshot/Set | LSAAA., LSAAB., LSAAC. |
+
+The sequence uses letters: AAA, AAB, AAC... AAZ, ABA, ABB... etc.
+
+### Is the Name Used by Code?
+
+**No!** The naming convention is just for humans to quickly identify item types. The code uses the `itemCategory` field in the CosmeticItem struct, not the name.
+
+However, **you should still follow the convention** because:
+- It keeps things organized and consistent
+- Makes debugging easier
+- Other developers expect this pattern
+
+If you name a holdable "FFFFF" instead of "LMXXX.", it will still work IF you set `itemCategory = Holdable` correctly - but it will be confusing!
+
+---
+
+## Creating Holdable Items (Step by Step)
+
+Holdables are trickier than hats or badges because they can be held in hands OR stored on your back. Here's everything you need:
+
+### Checklist for a Working Holdable
+
+- [ ] 3D Model prefab created and named correctly
+- [ ] Item added to `allcosmetics` string in `GorillaGameManager.cs`
+- [ ] Item added to `allCosmetics` list in CosmeticsController (Unity Inspector)
+- [ ] `itemCategory` set to `Holdable` (value 4)
+- [ ] `bothHandsHoldable` set correctly (true if it can go in either hand)
+- [ ] Prefab added to the TransferrableObject system (if it's interactive)
+
+### Common Reasons Holdables Don't Appear
+
+1. **Wrong `itemCategory`** - Must be set to `Holdable` (4), not left as `None` (0)
+
+2. **Missing from `allcosmetics` string** - Check `GorillaGameManager.cs` line 37
+
+3. **Name mismatch** - The `itemName` must match EXACTLY in:
+   - PlayFab catalog
+   - `allcosmetics` string
+   - `allCosmetics` list in Inspector
+   - Prefab name (sometimes)
+
+4. **Not in allowed list** - Your player needs to "own" the item. For testing, add it to the `concatStringOfCosmeticsAllowed` or use the Try-On system
+
+5. **Prefab not found** - The game looks for prefabs in specific folders. Check where other holdables are stored
+
+### Example: Adding a Holdable Named "LMZZZ."
+
+```
+1. Create prefab: Assets/holdables/LMZZZ.prefab
+
+2. In GorillaGameManager.cs, add to allcosmetics string:
+   "... 1 LMZZZ., ..."
+
+3. In Unity Inspector on CosmeticsController, add to allCosmetics list:
+   - itemName: "LMZZZ."
+   - itemCategory: Holdable (4)
+   - displayName: "My Cool Item"
+   - bothHandsHoldable: true
+   - canTryOn: true (for testing)
+
+4. Add to your test player's allowed cosmetics for testing
+```
+
+---
+
 ## Tips for Working with Cosmetics
 
 1. **Item names must match everywhere** - The name in PlayFab, the code, and the prefab must all match exactly!
@@ -226,6 +304,26 @@ Assets/Scripts/Assembly-CSharp/
 3. **Check the Console** - If an item doesn't show up, Unity's console might tell you why
 
 4. **Prefab naming matters** - Use `LEFT.itemname` and `RIGHT.itemname` for items that go on both sides
+
+5. **Follow the naming convention** - Use LH for hats, LB for badges, LF for faces, LM for holdables, LS for slingshots
+
+---
+
+## Troubleshooting
+
+### "My item doesn't appear in the equip menu"
+- Check `itemCategory` is set correctly (not `None`)
+- Verify item is in `allCosmetics` list in CosmeticsController
+- Make sure the name is in `allcosmetics` string in GorillaGameManager
+
+### "I can see my item but can't equip it"
+- Check the player's `concatStringOfCosmeticsAllowed` includes your item name
+- Verify the item is in PlayFab inventory (or bypass for testing)
+
+### "My holdable doesn't go in my hand"
+- Check `itemCategory = Holdable` (value 4)
+- Check `bothHandsHoldable` setting
+- Look at how existing holdables are set up and copy their pattern
 
 ---
 
