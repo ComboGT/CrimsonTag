@@ -378,9 +378,9 @@ public class VRRig : MonoBehaviourPun, IPunObservable, IPunInstantiateMagicCallb
 			if (XRSettings.loadedDeviceName == "OpenVR")
 			{
 				leftHand.trackingPositionOffset = new Vector3(0.02f, -0.06f, 0f);
-				leftHand.trackingRotationOffset = new Vector3(-141f, 204f, -27f);
+				leftHand.trackingRotationOffset = new Vector3(-141f, 180f, -27f);
 				rightHand.trackingPositionOffset = new Vector3(-0.02f, -0.06f, 0f);
-				rightHand.trackingRotationOffset = new Vector3(-141f, 156f, 27f);
+				rightHand.trackingRotationOffset = new Vector3(-141f, 180f, 27f);
 			}
 		}
 		else if (isOfflineVRRig)
@@ -393,9 +393,9 @@ public class VRRig : MonoBehaviourPun, IPunObservable, IPunInstantiateMagicCallb
 			if (XRSettings.loadedDeviceName == "OpenVR")
 			{
 				leftHand.trackingPositionOffset = new Vector3(0.02f, -0.06f, 0f);
-				leftHand.trackingRotationOffset = new Vector3(-141f, 204f, -27f);
+				leftHand.trackingRotationOffset = new Vector3(-141f, 180f, -27f);
 				rightHand.trackingPositionOffset = new Vector3(-0.02f, -0.06f, 0f);
-				rightHand.trackingRotationOffset = new Vector3(-141f, 156f, 27f);
+				rightHand.trackingRotationOffset = new Vector3(-141f, 180f, 27f);
 			}
 		}
 		else if (!base.photonView.IsMine && !isOfflineVRRig)

@@ -1,0 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ClickMannagerByMoose : MonoBehaviour
+{
+    public AudioSource ClickSound;
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        Debug.Log("collision detected" + collider, collider);
+        if (collider.GetComponentInParent<GorillaTriggerColliderHandIndicator>() != null)
+        {
+            GorillaTriggerColliderHandIndicator component = collider.GetComponent<GorillaTriggerColliderHandIndicator>();
+            if (component != null)
+            {
+                ClickSound.Play();
+            }
+        }
+    }
+}

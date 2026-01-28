@@ -17,6 +17,8 @@ namespace GorillaNetworking
     {
         public static volatile PlayFabAuthenticator instance;
 
+        public ModVentManager vManager;
+
         public string _playFabPlayerIdCache;
 
         private string _sessionTicket;
@@ -194,6 +196,7 @@ namespace GorillaNetworking
             IsUp();
             checkforupdate();
             SetMotd();
+            vManager.CheckYesAccess();
         }
 
         private void OnPlayFabError(PlayFabError obj)

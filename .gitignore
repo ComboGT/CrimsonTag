@@ -10,6 +10,9 @@ Build/
 Builds/
 UserSettings/
 Assets/_Recovery/
+Build*/
+Builds*/
+New\ Folder/
 
 # Unity generated files
 *.csproj
