@@ -61,3 +61,8 @@ Assets/Editor/x86/Bakery/
 .utmp/
 .idea/
 
+# No built files
+*.apk
+*.exe
+
+
