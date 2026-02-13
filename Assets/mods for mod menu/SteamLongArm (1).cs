@@ -10,7 +10,7 @@ public class SteamLongArm : MonoBehaviour
     private void Awake()
     {
         originalScale = targetObject.transform.localScale;
-        resetScale = new Vector3(1.2f, 1.2f, 1.2f);
+        resetScale = new Vector3(1.5f, 1.5f, 1.5f);
         ResizeObject();
     }
 

@@ -15,7 +15,7 @@ public class MosaSpeed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            GorillaLocomotion.Player.Instance.maxJumpSpeed = 9f;
-            GorillaLocomotion.Player.Instance.jumpMultiplier = 1.2f;
+            GorillaLocomotion.Player.Instance.maxJumpSpeed = 10f;
+            GorillaLocomotion.Player.Instance.jumpMultiplier = 1.4f;
     }
 }

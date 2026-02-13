@@ -138,7 +138,7 @@ public class HalloweenGhostChaser : MonoBehaviourPunCallbacks, IInRoomCallbacks,
 
 	private void Awake()
 	{
-		spawnIndex = 0;
+		spawnIndex = -1;
 		targetPlayer = null;
 		currentState = ChaseState.Dormant;
 		grabTime = 0f - minGrabCooldown;
@@ -236,7 +236,7 @@ public class HalloweenGhostChaser : MonoBehaviourPunCallbacks, IInRoomCallbacks,
 				{
 					ChooseRandomTarget();
 				}
-				if (!(followTarget == null) && (followTarget.position - ghostBody.transform.position).magnitude < catchDistance)
+				if ((followTarget.position - ghostBody.transform.position).magnitude < catchDistance)
 				{
 					currentState = ChaseState.Grabbing;
 				}
@@ -315,6 +315,7 @@ public class HalloweenGhostChaser : MonoBehaviourPunCallbacks, IInRoomCallbacks,
 			if (base.photonView.IsMine)
 			{
 				targetPlayer = null;
+				spawnIndex = -1;
 				InitializeGhost();
 			}
 			else
@@ -414,11 +415,6 @@ public class HalloweenGhostChaser : MonoBehaviourPunCallbacks, IInRoomCallbacks,
 	private void SetInitialSpawnPoint()
 	{
 		float num = 1000f;
-		spawnIndex = 0;
-		if (followTarget == null)
-		{
-			return;
-		}
 		for (int i = 0; i < spawnTransforms.Length; i++)
 		{
 			float magnitude = (followTarget.position - spawnTransformOffsets[i].position).magnitude;
@@ -444,16 +440,8 @@ public class HalloweenGhostChaser : MonoBehaviourPunCallbacks, IInRoomCallbacks,
 			num = Random.Range(0, GorillaParent.instance.vrrigs.Count);
 		}
 		possibleTarget.Clear();
-		if (num < GorillaParent.instance.vrrigs.Count)
-		{
-			targetPlayer = GorillaParent.instance.vrrigs[num].photonView.Owner;
-			followTarget = GorillaParent.instance.vrrigs[num].head.rigTarget;
-		}
-		else
-		{
-			targetPlayer = null;
-			followTarget = null;
-		}
+		targetPlayer = GorillaParent.instance.vrrigs[num].photonView.Owner;
+		followTarget = GorillaParent.instance.vrrigs[num].head.rigTarget;
 	}
 
 	private void SetInitialRotations()

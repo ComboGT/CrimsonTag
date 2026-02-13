@@ -2,12 +2,12 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!43 &4300000
 Mesh:
-  serializedVersion: 10
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Pinwheel
+  serializedVersion: 12
   m_SubMeshes:
   - serializedVersion: 2
     firstByte: 0
@@ -17,7 +17,7 @@ Mesh:
     firstVertex: 0
     vertexCount: 350
     localAABB:
-      m_Center: {x: 2.2351742E-08, y: 0.27241546, z: 0.021689864}
+      m_Center: {x: 0.000000022351742, y: 0.27241546, z: 0.021689864}
       m_Extent: {x: 0.12891254, y: 0.27241552, z: 0.030434912}
   m_Shapes:
     vertices: []
@@ -57,17 +57,15 @@ Mesh:
     e31: 0
     e32: 0
     e33: 1
-  m_BoneNameHashes:
-  - 2658811387
-  - 217245520
+  m_BoneNameHashes: fb3d7a9e50e7f20c
   m_RootBoneNameHash: 2658811387
   m_BonesAABB:
-  - m_Min: {x: -0.010365249, y: -3.8146972E-08, z: -0.008745048}
+  - m_Min: {x: -0.010365249, y: -0.000000038146972, z: -0.008745048}
     m_Max: {x: 0.010365478, y: 0.42882773, z: 0.02082773}
   - m_Min: {x: -0.12891251, y: -0.1289126, z: 0.011207195}
     m_Max: {x: 0.12891255, y: 0.12891248, z: 0.052124776}
   m_VariableBoneCountWeights:
-    m_Data: []
+    m_Data: 
   m_MeshCompression: 0
   m_IsReadable: 1
   m_KeepVertices: 0
@@ -141,63 +139,78 @@ Mesh:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_UV:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_Normals:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_Tangents:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_Weights:
       m_NumItems: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_NormalSigns:
       m_NumItems: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_TangentSigns:
       m_NumItems: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_FloatColors:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_BoneIndices:
       m_NumItems: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_Triangles:
       m_NumItems: 0
-      m_Data:
+      m_Data: 
       m_BitSize: 0
     m_UVInfo: 0
   m_LocalAABB:
-    m_Center: {x: 2.2351742E-08, y: 0.27241546, z: 0.021689864}
+    m_Center: {x: 0.000000022351742, y: 0.27241546, z: 0.021689864}
     m_Extent: {x: 0.12891254, y: 0.27241552, z: 0.030434912}
   m_MeshUsageFlags: 1
-  m_BakedConvexCollisionMesh:
-  m_BakedTriangleCollisionMesh:
-  m_MeshMetrics[0]: 0.28612673
-  m_MeshMetrics[1]: 1
+  m_CookingOptions: 30
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  'm_MeshMetrics[0]': 0.28612673
+  'm_MeshMetrics[1]': 1
   m_MeshOptimizationFlags: -1
   m_StreamData:
+    serializedVersion: 2
     offset: 0
     size: 0
-    path:
+    path: 
+  m_MeshLodInfo:
+    serializedVersion: 2
+    m_LodSelectionCurve:
+      serializedVersion: 1
+      m_LodSlope: 0
+      m_LodBias: 0
+    m_NumLevels: 1
+    m_SubMeshes:
+    - serializedVersion: 2
+      m_Levels:
+      - serializedVersion: 1
+        m_IndexStart: 0
+        m_IndexCount: 0

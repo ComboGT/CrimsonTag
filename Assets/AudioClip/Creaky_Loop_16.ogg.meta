@@ -1,45 +1,10 @@
 fileFormatVersion: 2
-guid: 37507d2438c255e49b0ad93646870854
-timeCreated: 1759001962
+guid: 5c3f9a1a7edd3f34c92f8746f6c29005
+timeCreated: 1686737220
 licenseType: Free
-AudioImporter:
-  serializedVersion: 6
+NativeFormatImporter:
   externalObjects: {}
-  defaultSettings:
-    loadType: 0
-    sampleRateSetting: 0
-    sampleRateOverride: 0
-    compressionFormat: 1
-    quality: 0
-    conversionMode: 0
-  platformSettingOverrides: {}
-  forceToMono: 0
-  normalize: 0
-  preloadAudioData: 1
-  loadInBackground: 0
-  ambisonic: 0
-  3D: 0
-  previewData:
-    previewData: []
-    origSize: 0
-    compSize: 0
-  output:
-    outputSettings:
-      loadType: 0
-      sampleRateSetting: 0
-      sampleRateOverride: 0
-      compressionFormat: 0
-      quality: 0
-      conversionMode: 0
-    outputContainerFormat: 0
-    editorOutputSettings:
-      loadType: 0
-      sampleRateSetting: 0
-      sampleRateOverride: 0
-      compressionFormat: 0
-      quality: 0
-      conversionMode: 0
-    editorOutputContainerFormat: 0
+  mainObjectFileID: 8300000
   userData:
   assetBundleName:
   assetBundleVariant:

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 164437c82c0c88a4ab4bf268cb917193, type: 3}
   m_Name: LckSettings
   m_EditorClassIdentifier: LIV.LCK::Liv.Lck.Settings.LckSettings
-  TrackingId: 
-  GameName: MyGame
-  RecordingFilenamePrefix: MyGamePrefix
-  RecordingAlbumName: MyGameAlbum
+  TrackingId: e98b4c86-3caa-4157-acf6-8c5a338f5eac
+  GameName: crimson tag
+  RecordingFilenamePrefix: LivCamPrefix
+  RecordingAlbumName: LivCamAlbum
   RecordingDateSuffixFormat: yyyy-MM-dd_HH-mm-ss
   AddPermissionsToAndroidManifest: 1
   EnableStencilSupport: 1
